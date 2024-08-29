@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        title Student List        
+    body
+        h1 Student List
+        table(border="1")
+            tr
+                th Roll No
+                th Name
+                th C Marks
+                th Python Marks
+                th Java Marks
+                th Total Marks
+                th Percentage
+            each student in students
+                tr
+                    td= student.rollno
+                    td= student.name
+                    td= student['c-marks']
+                    td= student['python-marks']
+                    td= student['java-marks']
+                    td= student['total-marks']
+                    td= student.percentage
+        a(href="/") Go back to the form

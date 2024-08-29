@@ -1,0 +1,22 @@
+doctype html
+html
+    head
+        title Top Students by Subject
+    body
+        h1 Top Students by #{subject.replace('-', ' ')}
+        if students.length > 0
+            table(border="1")
+                tr
+                    th Rank
+                    th Roll No
+                    th Name
+                    th= subject.replace('-', ' ')
+                each student, index in students
+                    tr
+                        td= index + 1
+                        td= student.rollno
+                        td= student.name
+                        td= student[subject]
+        else
+            p No students found.
+        a(href="/") Go back to the home page

@@ -1,0 +1,19 @@
+doctype html
+html
+    head
+        title Top 3 Students in C Subject
+    body
+        h1 Top 3 Students in C Subject
+        table(border="1")
+            tr
+                th Rank
+                th Roll No
+                th Name
+                th C Marks
+            each student, index in students
+                tr
+                    td= index + 1
+                    td= student.rollno
+                    td= student.name
+                    td= student['c-marks']
+        a(href="/") Go back to the form

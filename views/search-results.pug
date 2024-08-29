@@ -1,0 +1,27 @@
+doctype html
+html
+    head
+        title Search Results
+    body
+        h1 Search Results for Roll Number #{rollno}
+        if student
+            table(border="1")
+                tr
+                    th Roll No
+                    th Name
+                    th C Marks
+                    th Python Marks
+                    th Java Marks
+                    th Total Marks
+                    th Percentage
+                tr
+                    td= student.rollno
+                    td= student.name
+                    td= student['c-marks']
+                    td= student['python-marks']
+                    td= student['java-marks']
+                    td= student['total-marks']
+                    td= student.percentage
+        else
+            p No student found with roll number #{rollno}.
+        a(href="/search-form")

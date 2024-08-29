@@ -1,0 +1,13 @@
+doctype html
+html
+    head
+        title Search by Roll Number
+    body
+        h1 Search for Student by Roll Number
+        form(action="/search" method="GET")
+            div
+                label(for="rollno") Enter Roll Number:
+                input(type="text" name="rollno" id="rollno" required)
+            br
+            button(type="submit") Search
+        a(href="/") Go back to the home page

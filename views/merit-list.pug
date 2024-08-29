@@ -1,0 +1,21 @@
+doctype html
+html
+    head
+        title Merit List
+    body
+        h1 Merit List
+        table(border="1")
+            tr
+                th Rank
+                th Roll No
+                th Name
+                th Total Marks
+                th Percentage
+            each student, index in students
+                tr
+                    td= index + 1
+                    td= student.rollno
+                    td= student.name
+                    td= student['total-marks']
+                    td= student.percentage
+        a(href="/") Go back to the form

@@ -1,0 +1,12 @@
+doctype html
+html
+    head
+        title Apply Grace Marks
+    body
+        h1 Apply Grace Marks in Java Subject
+        form(action="/apply-grace-marks" method="POST")
+            label(for="graceMarks") Enter number of marks to grace:
+            input(type="number" name="graceMarks" required)
+            br
+            button(type="submit") Apply Grace Marks
+        a(href="/") Go back to the form

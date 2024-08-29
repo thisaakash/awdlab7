@@ -1,0 +1,36 @@
+doctype html
+html
+    head
+        title Top Students by Subject
+        script(src="https://code.jquery.com/jquery-3.6.0.min.js")
+        script.
+            $(document).ready(function() {
+                $('#subject-form').submit(function(event) {
+                    event.preventDefault(); 
+                    var subject = $('#subject').val();
+                    $.ajax({
+                        url: '/top-students',
+                        method: 'GET',
+                        data: { subject: subject },
+                        success: function(data) {
+                            $('#results').html(data); 
+                        },
+                        error: function(xhr, status, error) {
+                            $('#results').html('<p>An error occurred: ' + error + '</p>');
+                        }
+                    });
+                });
+            });
+    body
+        h1 List Top Students by Subject
+        form(id="subject-form")
+            div
+                label(for="subject") Select Subject:
+                select(name="subject" id="subject" required)
+                    option(value="c-marks") C Marks
+                    option(value="python-marks") Python Marks
+                    option(value="java-marks") Java Marks
+            br
+            button(type="submit") Show Top Students
+        div(id="results") 
+        a(href="/") Go back to the home page

@@ -1,0 +1,24 @@
+doctype html
+html
+    head
+        title Student Management
+    body
+        h1 Insert Student
+        form(action="/students", method="POST")
+            div
+                label(for="rollno") Roll Number:
+                input(type="number", name="rollno", required)
+            div
+                label(for="name") Name:
+                input(type="text", name="name", required)
+            div
+                label(for="c-marks") C Marks:
+                input(type="number", name="c-marks", required)
+            div
+                label(for="python-marks") Python Marks:
+                input(type="number", name="python-marks", required)
+            div
+                label(for="java-marks") Java Marks:
+                input(type="number", name="java-marks", required)
+            div
+                button(type="submit") Add Student
